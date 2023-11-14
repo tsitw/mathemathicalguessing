@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Guessing Game</title>
+<style>
+body{background-color: aqua; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+.introduction{color: darkblue; font-size: larger;}
+#title{font-size: xx-large; font-family: sans-serif;}
+#info{font-size: small;}
+#game{display: none; color: blueviolet;}
+
+</style>
+</head>
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/czTksCF6X8Y?si=H05rN8ZIVA018-rF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <h1 id="title" class="introduction">Mathemathical Guessing</h1>
+    <h3 class="introduction">Guess the following number!</h3>
+    <br>
+    <p id="game"></p>
+    <br>
+    <p id="reveal"></p>
+    <input type="text" id="guess">
+    <br>
+    <input type="button" id="button" value="Guess!">
+    <br>
+    <h6 id="info">[insert additional information here]</h6>
+
+    <script>
+   let x = Math.floor((Math.random() * 10) + 1)
+   document.getElementById("button").onclick = function() {
+    if(document.getElementById("guess").value == x) {
+        document.getElementById("game").innerHTML = x;
+        document.getElementById("game").style.display = "block";
+        document.getElementById("reveal").innerHTML = "You win!";
+        document.getElementById("reveal").style.display = "block";
+    }else{
+        document.getElementById("game").innerHTML = x;
+        document.getElementById("game").style.display = "block";
+        document.getElementById("reveal").innerHTML = "You lose!";
+        document.getElementById("reveal").style.display = "block";
+    }
+   }
+
+    </script>
+</body>
+</html>
